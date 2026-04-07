@@ -1,27 +1,30 @@
-# ⚙️ RotomPedia Backend Microservice
+# RotomPedia Backend - Microservicio
 
-Este repositorio contiene el **microservicio backend de RotomPedia**, desarrollado originalmente como parte del proyecto movil **RotomPedia**.
+Microservicio desarrollado en Kotlin con Spring Boot para la gestión de datos, preparado para un entorno de despliegue automatizado.
 
-El objetivo de este repositorio es **centralizar el microservicio en un proyecto independiente**, el cual sera utilizado como base para implementar practicas de **DevOps, control de versiones y automatizacion CI/CD** durante el desarrollo del curso.
+## Estrategia de Ramificación (GitFlow)
+Hemos seleccionado **GitFlow** como nuestra estrategia de ramificación. 
+**Justificación:** Esta metodología nos permite aislar el trabajo en progreso (`develop`) del código listo para producción (`main`), lo cual es ideal para mantener la estabilidad del microservicio mientras desarrollamos nuevas integraciones (como Docker y CI/CD). Además, facilita la colaboración al definir reglas claras para ramas temporales (`feature/` y `hotfix/`).
 
-Este servicio expone una **API REST desarrollada con Spring Boot**, que permite consultar informacion sobre **lideres de gimnasio Pokemon por region**, datos que son consumidos por la aplicacion movil.
+### Naming de Ramas
+* `main`: Contiene el código estable y funcional (Producción).
+* `develop`: Rama de integración principal. Aquí se une el trabajo de todos.
+* `feature/<nombre-descriptivo>`: Ramas para nuevas funcionalidades (Ej: `feature/dockerizacion`). Nacen de `develop` y se unen a `develop`.
+* `hotfix/<nombre-descriptivo>`: Para resolver errores críticos en producción (Ej: `hotfix/documentacion-devops`). Nacen de `main` y se unen a `main` y `develop`.
 
----
+## Convenciones de Commits
+Utilizamos _Conventional Commits_ para mantener un historial trazable:
+* `feat:` Para nuevas funcionalidades (ej. `feat: agregar Dockerfile`).
+* `fix:` Para solución de errores (ej. `fix: corregir conexión a BD`).
+* `chore:` Para tareas de mantenimiento o actualizaciones (ej. `chore: actualizar dependencias`).
 
-# 📌 Descripcion del Microservicio
+## Flujos de Merge y Estrategias de Revisión
+1. **Prohibido hacer push directo a `main` o `develop`.**
+2. Todo código debe integrarse mediante **Pull Requests (PR)**.
+3. Se requiere la revisión y aprobación de al menos 1 compañero (Code Review) antes de realizar el "Merge pull request".
+4. El pipeline de CI (GitHub Actions) debe pasar exitosamente (Build & Test) antes de permitir el merge.
 
-El microservicio proporciona un endpoint REST que entrega informacion sobre **Gym Leaders** de distintas regiones del universo Pokemon.
-
-Cada lider contiene informacion como:
-
-- Nombre
-- Region
-- Tipo de especialidad
-- Nombre de la medalla
-- Imagen del lider
-
-Los datos se almacenan en una **base de datos en memoria H2** y se cargan automaticamente al iniciar la aplicacion.
-
-Este servicio fue disenado para ser consumido por la aplicacion movil **RotomPedia**, permitiendo separar la logica de backend del cliente Android.
-
----
+## Estructura de Carpetas
+* `src/main/kotlin/...`: Código fuente del microservicio (Controladores, Repositorios, Entidades).
+* `.github/workflows/`: Archivos de configuración para automatización CI/CD.
+* `Dockerfile` / `docker-compose.yml`: Archivos para orquestación y despliegue local simulado.
