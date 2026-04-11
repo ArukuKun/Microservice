@@ -1,0 +1,23 @@
+version: '3.8'
+services:
+  # Servicio de Base de Datos (Reemplaza a Laragon)
+  db:
+    image: mysql:8.0
+    environment:
+      MYSQL_DATABASE: rotompedia_db
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - "3306:3306"
+
+  # Su aplicación Kotlin
+  app:
+    build: .
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+    environment:
+      # Aquí es donde ocurre la magia: "db" es el nombre del servicio arriba
+      SPRING_DATASOURCE_URL: jdbc:mysql://db:3306/rotompedia_db?createDatabaseIfNotExist=true
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: root
