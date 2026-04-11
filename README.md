@@ -39,6 +39,8 @@ Durante el desarrollo de esta evaluación, se utilizó IA (Gemini) como apoyo pa
 
 ## Conclusiones y Reflexiones Individuales
 **Reflexión de Matias Espinoza:**
-Aprendi a trabajar enm equipo y a reutilizar contenido pasado hace tiempo. Gracias a este proyecto pude completar una aplicacion web que habiamos creado con un amigo y a reutilizarlo para darle un ueso mas, poder utilizar otr microservicio sin necesidad de crear uno nuevo es Goty.
+Aprendi a trabajar en equipo y a reutilizar contenido pasado hace tiempo. Gracias a este proyecto pude completar una aplicacion web que habiamos creado con un amigo y a reutilizarlo para darle un uso mas, poder utilizar otro microservicio sin necesidad de crear uno nuevo es Goty.
 
-**Reflexión de [Nombre de tu compañero/a]:**
+**Reflexión de Vicente Placencia:**
+Durante el desarrollo aprendi a manejar el uso de ramas distintas para el desarrollo del proyecto, corroborar los pull request, consultar el uso de Actions y funcionamiento. 
+En conclusión me ayudo a poder realizar de manera mas organizada y eficaz trabajos en equipo de este estilo.
