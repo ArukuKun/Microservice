@@ -28,3 +28,17 @@ Utilizamos _Conventional Commits_ para mantener un historial trazable:
 * `src/main/kotlin/...`: Código fuente del microservicio (Controladores, Repositorios, Entidades).
 * `.github/workflows/`: Archivos de configuración para automatización CI/CD.
 * `Dockerfile` / `docker-compose.yml`: Archivos para orquestación y despliegue local simulado.
+
+* ## Automatización CI/CD (GitHub Actions)
+Para automatizar la integración continua, configuramos un pipeline básico en `.github/workflows/ci.yml`. Su rol principal dentro del proceso CI/CD es garantizar que todo el código nuevo sea válido antes de integrarse. Cada vez que hacemos un *push* a `develop` o un *Pull Request* a `main`, este flujo levanta un entorno virtual (Ubuntu), instala Java 17, compila el código fuente y ejecuta las pruebas automáticas usando `./gradlew build`. Si el código falla, el Pull Request se bloquea, asegurando la calidad de nuestra rama principal.
+
+## Declaración de uso de Inteligencia Artificial
+Durante el desarrollo de esta evaluación, se utilizó IA (Gemini) como apoyo para:
+- Corregir el script de GitHub Actions (`ci.yml`) para asegurar la correcta instalación de Java y ejecución de Gradle.
+- Guía paso a paso para resolver errores en consola al subir ramas (errores de refspec en git push).
+
+## Conclusiones y Reflexiones Individuales
+**Reflexión de Matias Espinoza:**
+Aprendi a trabajar enm equipo y a reutilizar contenido pasado hace tiempo. Gracias a este proyecto pude completar una aplicacion web que habiamos creado con un amigo y a reutilizarlo para darle un ueso mas, poder utilizar otr microservicio sin necesidad de crear uno nuevo es Goty.
+
+**Reflexión de [Nombre de tu compañero/a]:**
