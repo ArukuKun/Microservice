@@ -1,4 +1,4 @@
-name: CI Spring Boot (solo eco)
+name: CI Spring Boot
 
 on:
   push:
@@ -7,9 +7,26 @@ on:
     branches: ["main"]
 
 jobs:
-  echo-job:
+  build:
     runs-on: ubuntu-latest
+    
+    # Especificamos el directorio de trabajo donde está el código de Spring Boot
+    defaults:
+      run:
+        working-directory: ./rotompediabackend
+
     steps:
-      
-name: Hacer eco
-      run: echo "Esto es un eco - El pipeline ya no compila, solo imprime este mensaje"
+    - name: Checkout del código
+      uses: actions/checkout@v4
+
+    - name: Configurar JDK 17
+      uses: actions/setup-java@v4
+      with:
+        java-version: '17'
+        distribution: 'temurin'
+
+    - name: Dar permisos de ejecución a gradlew
+      run: chmod +x ./gradlew
+
+    - name: Construir y probar con Gradle (Build & Test)
+      run: ./gradlew build
