@@ -1,8 +1,8 @@
-name: CI Spring Boot
+name: CI/CD Kotlin Spring Boot
 
 on:
   push:
-    branches: ["develop"]
+    branches: ["main", "develop"]
   pull_request:
     branches: ["main"]
 
