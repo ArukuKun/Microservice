@@ -30,7 +30,6 @@ jobs:
     - name: Construir y probar con Gradle (Build & Test)
       run: ./gradlew build
 
-    # IE3: Análisis de seguridad (Snyk en modo tolerante para no bloquear el PR)
     - name: Escaneo de seguridad con Snyk
       uses: snyk/actions/setup@master
     - name: Ejecutar Snyk
@@ -42,9 +41,8 @@ jobs:
     - name: Construir imagen Docker
       run: docker build -t rotompediabackend:latest .
 
-    # IE4 y IE5: Despliegue automático en entorno simulado (Docker Compose)
     - name: Despliegue simulado y Orquestación
-      run: docker-compose up -d
+      run: docker compose up -d
       
     - name: Verificar estado de los contenedores
       run: docker ps
