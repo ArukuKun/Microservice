@@ -1,7 +1,7 @@
 package com.duoc.rotompediabackend
 
 import io.mockk.every
-import com.ninjasquad.springmockk.MockkBean
+import com.ninjasquad.springmockk.MockkBean // Import correcto
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest
@@ -12,7 +12,8 @@ import org.springframework.test.web.servlet.get
 @WebMvcTest(GymLeaderController::class)
 class GymLeaderControllerTests(@Autowired val mockMvc: MockMvc) {
 
-    @MockkBean
+    // Se agrega relaxed = true para evitar el MockKException en el arranque
+    @MockkBean(relaxed = true)
     lateinit var repository: GymLeaderRepository
 
     @Test
