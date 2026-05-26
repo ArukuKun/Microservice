@@ -26,11 +26,9 @@ dependencies {
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     
-    // Aquí está la dependencia de MySQL con el nombre CORRECTO
     runtimeOnly("com.mysql:mysql-connector-j:8.0.34")
     runtimeOnly("com.h2database:h2")
     
-    // Estas dependencias son OBLIGATORIAS para que tus tests pasen
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation("org.springframework.boot:spring-boot-starter-data-jpa-test")
     testImplementation("org.springframework.boot:spring-boot-starter-webmvc-test")
