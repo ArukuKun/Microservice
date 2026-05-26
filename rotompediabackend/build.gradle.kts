@@ -1,9 +1,9 @@
 plugins {
-    kotlin("jvm") version "2.2.21"
-    kotlin("plugin.spring") version "2.2.21"
-    id("org.springframework.boot") version "4.0.0"
-    id("io.spring.dependency-management") version "1.1.7"
-    kotlin("plugin.jpa") version "2.2.21"
+    kotlin("jvm") version "1.9.23"
+    kotlin("plugin.spring") version "1.9.23"
+    id("org.springframework.boot") version "3.2.4"
+    id("io.spring.dependency-management") version "1.1.4"
+    kotlin("plugin.jpa") version "1.9.23"
 }
 
 group = "com.duoc"
@@ -22,14 +22,14 @@ repositories {
 
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
-    implementation("org.springframework.boot:spring-boot-starter-webmvc")
+    implementation("org.springframework.boot:spring-boot-starter-web") // Nombre oficial corregido
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
+    
     runtimeOnly("com.mysql:mysql-connector-j")
     runtimeOnly("com.h2database:h2")
+    
     testImplementation("org.springframework.boot:spring-boot-starter-test")
-    testImplementation("org.springframework.boot:spring-boot-starter-data-jpa-test")
-    testImplementation("org.springframework.boot:spring-boot-starter-webmvc-test")
     testImplementation("io.mockk:mockk:1.14.4")
     testImplementation("com.ninja-squad:springmockk:4.0.2")
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit5")
