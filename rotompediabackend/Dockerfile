@@ -1,14 +1,15 @@
-# Stage 1: build the application
-FROM gradle:8.5.1-jdk17 AS build
-WORKDIR /home/gradle/project
-COPY --chown=gradle:gradle . .
-RUN ./gradlew clean bootJar --no-daemon
+# Usar una imagen de Java 17 o superior
+FROM openjdk:17-jdk-slim
 
-# Stage 2: run the application on a lightweight runtime image
-FROM eclipse-temurin:17-alpine
-RUN addgroup -S appgroup && adduser -S appuser -G appgroup
-USER appuser
+# Directorio de trabajo dentro del contenedor
 WORKDIR /app
-COPY --from=build /home/gradle/project/build/libs/*.jar app.jar
+
+# Copiar el archivo JAR generado por Gradle
+# Nota: Primero deben ejecutar ./gradlew bootJar
+COPY build/libs/*.jar app.jar
+
+# Exponer el puerto que usa Spring Boot
 EXPOSE 8080
-ENTRYPOINT ["java", "-jar", "/app/app.jar"]
+
+# Comando para ejecutar la aplicación
+ENTRYPOINT ["java", "-jar", "app.jar"]
