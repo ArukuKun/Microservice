@@ -56,3 +56,4 @@ Se utilizó Gemini como apoyo técnico durante distintas etapas del desarrollo:
 Este proyecto me permitió profundizar en el trabajo colaborativo y en la reutilización de componentes desarrollados previamente. A través de él, logré integrar una aplicación web existente con un microservicio nuevo, evitando la duplicación de esfuerzos y aprovechando la modularidad como ventaja concreta del enfoque adoptado.
 
 **Reflexión de Vicente Placencia:**
+Gracias a este proyecto, logré avanzar como desarrollador y ver nuevas formas de usar ciertas aplicaciones y profundizar el uso de Github como herramienta, lo cual me servira mucho en futuros proyectos. Es importante recalcar que la buena comunicacion y participacion con mi compañero es muy importante y le da una gran experiencia a la forma en que desarrollamos esto.
