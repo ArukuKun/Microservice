@@ -1,5 +1,5 @@
-# Usar una imagen de Java 17 o superior
-FROM openjdk:17-jdk-slim
+# Usar una imagen de Java 17 soportada (Eclipse Temurin)
+FROM eclipse-temurin:17-jdk-alpine
 
 # Directorio de trabajo dentro del contenedor
 WORKDIR /app
